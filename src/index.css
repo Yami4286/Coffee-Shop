@@ -24,6 +24,7 @@ background-color: #6F4E37;
 }
 
 .h1{
+  text-align: center;
   padding-left: 0.5em;
 }
 nav {
@@ -38,7 +39,8 @@ nav {
 }
 
 .siderbar {
-  background-color: burlywood;
+background-color: rgba(222, 184, 135, 0.9); /* burlywood with 90% opacity */
+  backdrop-filter: blur(5px);
 
 }
 
@@ -91,4 +93,31 @@ width: 100%; /* Let it use the full card width */
       margin: 0.5em;
     background: transparent;
     border-radius: 20px;
+}
+
+
+/* Base styles for the main container */
+.menu-container {
+  transition: background 0.5s ease; /* Smooth fade when switching! */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the image still while you scroll */
+}
+
+/* Background for Coffees */
+.coffees {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000');
+}
+
+/* Background for Pastries */
+.pastries{
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                    url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1000');
+}
+
+/* Background for Cupcakes */
+.cupcakes {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                    url('https://images.unsplash.com/photo-1587668178277-295251f900ce?w=1000');
 }

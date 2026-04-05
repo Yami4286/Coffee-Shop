@@ -44,25 +44,31 @@ function cards(props) {
 
   return (
     <>
-    <h1 className="h1">{props.category}</h1>
-    <div className="menu-container">
-      {coffees.map((coffee) => (
-        <div key={coffee.id} className="coffee-card">
-          {/* The Image Tag */}
-          <img src={coffee.image} alt={coffee.name} className="coffee-image" />
+      <h1 className="h1">{props.category}</h1>
+      <div
+        className={`menu-container `}
+      >
+        {coffees.map((coffee) => (
+          <div key={coffee.id} className="coffee-card">
+            {/* The Image Tag */}
+            <img
+              src={coffee.image}
+              alt={coffee.name}
+              className="coffee-image"
+            />
 
-          <h3>{coffee.name}</h3>
-          <p className="description">{coffee.description}</p>
-          <div className="price-tag">${coffee.price.toFixed(2)}</div>
-          <button
-            className="add-button"
-            onClick={() => handleAddToCart(coffee.name)}
-          >
-            Add to Order
-          </button>
-        </div>
-      ))}
-    </div>
+            <h3>{coffee.name}</h3>
+            <p className="description">{coffee.description}</p>
+            <div className="price-tag">${coffee.price.toFixed(2)}</div>
+            <button
+              className="add-button"
+              onClick={() => handleAddToCart(coffee.name)}
+            >
+              Add to Order
+            </button>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

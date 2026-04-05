@@ -32,14 +32,14 @@ function cards(props) {
     id: 105, 
     name: "Apple Turnover", 
     price: 3.95, 
-    image: "https://images.unsplash.com/photo-1621243759178-957697192661?w=500",
+    image: "https://images.unsplash.com/photo-1657313938000-23c4322dbe22?q=80&w=2340",
     description: "Crispy puff pastry stuffed with spiced apple filling." 
   }
 ];
   return (
     <>
     <h1 className="h1">{props.category}</h1>
-    <div className="menu-container">
+    <div className={`menu-container`}>
       {pastries.map((coffee) => (
         <div key={coffee.id} className="coffee-card">
           {/* The Image Tag */}
