@@ -121,3 +121,27 @@ width: 100%; /* Let it use the full card width */
   background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
                     url('https://images.unsplash.com/photo-1587668178277-295251f900ce?w=1000');
 }
+
+/* cart css */
+.Cart{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  padding: 20px;
+
+}
+
+.Cart img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}

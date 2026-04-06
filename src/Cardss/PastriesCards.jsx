@@ -50,7 +50,7 @@ function cards(props) {
           <div className="price-tag">${coffee.price.toFixed(2)}</div>
           <button
             className="add-button"
-            onClick={() => handleAddToCart(coffee.name)}
+            onClick={() => props.onAddToCart(coffee.name)}
           >
             Add to Order
           </button>
