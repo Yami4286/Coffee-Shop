@@ -42,13 +42,17 @@ function cards(props) {
     },
   ];
 
+  const filteredCoffees = coffees.filter(coffee =>
+    coffee.name.toLowerCase().includes(props.searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <h1 className="h1">{props.category}</h1>
       <div
         className={`menu-container `}
       >
-        {coffees.map((coffee) => (
+        {filteredCoffees.map((coffee) => (
           <div key={coffee.id} className="coffee-card">
             {/* The Image Tag */}
             <img

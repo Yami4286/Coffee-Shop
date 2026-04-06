@@ -8,6 +8,7 @@ function App() {
   const [view, setView] = useState("coffees");
   const [cart, setcart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
   const backgrounds = {
     coffees: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200')`,
     pastries: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1200')`,
@@ -26,8 +27,15 @@ function App() {
   return (
     <>
       <header className="header">
-        <input type="text" placeholder="Search"></input>
-        <button> search</button>
+        <div className="SearchDiv">
+          <input className="SearchBox"
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        ></input>
+        <button className="SearchButton"> search</button>
+        </div>
         <br />
         <div onClick={() => setCartOpen(!cartOpen)}>
           Cart ({cart.length}){" "}
@@ -42,20 +50,20 @@ function App() {
       </header>
       <div className="siderbar">
         <nav>
-          <button onClick={() => setView("coffees")}>Coffees</button>
-          <button onClick={() => setView("pastries")}>Pastries</button>
-          <button onClick={() => setView("cupcakes")}>Cupcakes</button>
+          <div onClick={() => setView("coffees")}>Coffees</div>
+          <div onClick={() => setView("pastries")}>Pastries</div>
+          <div onClick={() => setView("cupcakes")}>Cupcakes</div>
         </nav>
       </div>
       <main style={{ background: backgrounds[view] }} className="main-content">
         {view === "coffees" && (
-          <CoffeeMenu category={"Coffee Menu"} onAddToCart={addToCart} />
+          <CoffeeMenu category={"Coffee Menu"} onAddToCart={addToCart}   searchTerm={searchTerm}/>
         )}
         {view === "pastries" && (
-          <PastryMenu category={"Pastries Menu"} onAddToCart={addToCart} />
+          <PastryMenu category={"Pastries Menu"} onAddToCart={addToCart}   searchTerm={searchTerm} />
         )}
         {view === "cupcakes" && (
-          <CupCakesMenu category={"CupCakes Menu"} onAddToCart={addToCart} />
+          <CupCakesMenu category={"CupCakes Menu"} onAddToCart={addToCart}  searchTerm={searchTerm} />
         )}
       </main>
 

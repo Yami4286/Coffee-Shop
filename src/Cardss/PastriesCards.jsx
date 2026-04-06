@@ -36,11 +36,15 @@ function cards(props) {
     description: "Crispy puff pastry stuffed with spiced apple filling." 
   }
 ];
+
+const filteredPastries = pastries.filter(coffee =>
+    coffee.name.toLowerCase().includes(props.searchTerm.toLowerCase())
+  );
   return (
     <>
     <h1 className="h1">{props.category}</h1>
     <div className={`menu-container`}>
-      {pastries.map((coffee) => (
+      {filteredPastries.map((coffee) => (
         <div key={coffee.id} className="coffee-card">
           {/* The Image Tag */}
           <img src={coffee.image} alt={coffee.name} className="coffee-image" />
@@ -50,7 +54,7 @@ function cards(props) {
           <div className="price-tag">${coffee.price.toFixed(2)}</div>
           <button
             className="add-button"
-            onClick={() => props.onAddToCart(coffee.name)}
+            onClick={() => props.onAddToCart(coffee)}
           >
             Add to Order
           </button>
